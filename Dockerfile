@@ -28,7 +28,4 @@ WORKDIR /opt/errbit/app
 RUN bundle install --deployment
 RUN bundle exec rake assets:precompile
 
-CMD echo "Errbit::Application.config.secret_token = '$(bundle exec rake secret)'" > config/initializers/__secret_token.rb && \
-  bundle exec rake db:seed && \
-  bundle exec rake db:mongoid:create_indexes && \
-  bundle exec unicorn -c ./config/unicorn.default.rb
+CMD script/wait-for-it.sh mongodb:27017 -- script/bootstrap.sh
