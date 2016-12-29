@@ -160,6 +160,7 @@ GEM
     launchy (2.4.3-java)
       addressable (~> 2.3)
       spoon (~> 0.0.1)
+    libv8 (3.16.14.17)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     meta_request (0.2.8)
@@ -278,6 +279,7 @@ GEM
     rake (10.4.2)
     rdoc (4.1.2)
       json (~> 1.4)
+    ref (2.0.0)
     request_store (1.1.0)
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
@@ -349,6 +351,9 @@ GEM
       tins (~> 0.8)
     test-unit (3.0.8)
       power_assert
+    therubyracer (0.12.2)
+      libv8 (~> 3.16.14.0)
+      ref
     thor (0.19.1)
     thread_safe (0.3.4)
     thread_safe (0.3.4-java)
@@ -441,6 +446,7 @@ DEPENDENCIES
   rushover
   sass-rails
   test-unit
+  therubyracer
   timecop
   uglifier
   underscore-rails
@@ -448,3 +454,6 @@ DEPENDENCIES
   useragent
   xmpp4r
   yajl-ruby
+
+BUNDLED WITH
+   1.13.7

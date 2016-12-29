@@ -1,0 +1,14 @@
+errbit:
+  build: .
+  ports:
+    - "8080:8080"
+  links:
+    - mongodb
+  environment:
+    - RACK_ENV=production
+    - MONGO_URL=mongodb://mongodb:27017/errbit
+mongodb:
+  image: mongo:3.0
+  ports:
+    - "27017"
+  command: --smallfiles
